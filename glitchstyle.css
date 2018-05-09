@@ -1,0 +1,286 @@
+/*taken from codepen
+https://codepen.io/yexx/pen/mxRrWE
+mit license
+
+commenting out most of the things unrelated to the glitch
+*/
+/*
+html,
+body {
+  height: 100%;
+  min-height: 100;
+}
+* {
+  box-sizing: border-box;
+}
+main {
+  display: flex;
+  padding: 30px;
+  flex-flow: row nowrap;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(#ff6ad5 0%, #8795e8 80%);
+}
+*/
+img {
+  display: block;
+  max-width: 100%;
+}
+/*
+.logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -40%);
+  z-index: 3;
+}
+.logo svg {
+  display: block;
+  width: auto;
+  height: 70vh;
+  margin: 0 auto;
+  filter: drop-shadow(0px 0px 5px #fff);
+}
+.logo svg path {
+  stroke: #fff;
+  stroke-width: 3px;
+  fill: transparent;
+}
+*/
+
+div {
+  border-style: solid;
+}
+
+
+.square {
+  position: fixed;
+  bottom: 0px;
+  right: 5px;
+  width: 90px;
+
+  max-width: 100px;
+  max-height: 100px;
+}
+.square:after {
+  content: '';
+  display: block;
+  padding-bottom: 100%;
+}
+/* image effects and positions */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.overlay:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* The above block seems to move the content away and then back */
+  width: 101%;
+  height: 101%;
+  background-image: linear-gradient(#000 0px, transparent 1px);
+  background-size: 4px 4px;
+  border-radius: 100%; /*makes it a circular shape*/
+  mix-blend-mode: overlay;
+  animation: scanlines 0.8s linear infinite;
+}
+.overlay img {
+  width: 90px;
+  height: 100%;
+  transition: filter 0.5s ease;
+}
+.overlay > div {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: all 0.5s ease;
+  overflow: hidden; /* hides any part of the content that is bigger than the rounded corners*/
+  border-radius: 100%;
+  mix-blend-mode: darken;
+  animation: glitch-r 1s ease-in infinite, glitch-c 1s linear;
+}
+.overlay > div.red {
+  animation-delay: 0.1s;
+}
+.overlay > div.green {
+  animation-delay: 0.4s;
+}
+.overlay > div.blue {
+  animation-delay: 0.3s;
+}
+.overlay > div:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  mix-blend-mode: lighten;
+}
+.overlay > div.red:after {
+  background: #f00;
+}
+.overlay > div.green:after {
+  background: #0f0;
+}
+.overlay > div.blue:after {
+  background: #00f;
+}
+.overlay > div.white {
+  mix-blend-mode: normal;
+  background: #fff;
+}
+
+/* Keyframes */
+@-moz-keyframes glitch-r {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  3% {
+    transform: translate(10px, 0);
+  }
+  5% {
+    transform: translate(-5px, 0);
+  }
+  6% {
+    transform: translate(0px, 0);
+  }
+}
+@-webkit-keyframes glitch-r {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  3% {
+    transform: translate(10px, 0);
+  }
+  5% {
+    transform: translate(-5px, 0);
+  }
+  6% {
+    transform: translate(0px, 0);
+  }
+}
+@-o-keyframes glitch-r {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  3% {
+    transform: translate(10px, 0);
+  }
+  5% {
+    transform: translate(-5px, 0);
+  }
+  6% {
+    transform: translate(0px, 0);
+  }
+}
+@keyframes glitch-r {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  3% {
+    transform: translate(10px, 0);
+  }
+  5% {
+    transform: translate(-5px, 0);
+  }
+  6% {
+    transform: translate(0px, 0);
+  }
+}
+@-moz-keyframes glitch-c {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  2% {
+    transform: translate(5px, 0);
+  }
+  4% {
+    transform: translate(-15px, 0) scale(0.8, 1);
+  }
+  6% {
+    transform: translate(0px, 0) scale(1, 1);
+  }
+}
+@-webkit-keyframes glitch-c {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  2% {
+    transform: translate(5px, 0);
+  }
+  4% {
+    transform: translate(-15px, 0) scale(0.8, 1);
+  }
+  6% {
+    transform: translate(0px, 0) scale(1, 1);
+  }
+}
+@-o-keyframes glitch-c {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  2% {
+    transform: translate(5px, 0);
+  }
+  4% {
+    transform: translate(-15px, 0) scale(0.8, 1);
+  }
+  6% {
+    transform: translate(0px, 0) scale(1, 1);
+  }
+}
+@keyframes glitch-c {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  2% {
+    transform: translate(5px, 0);
+  }
+  4% {
+    transform: translate(-15px, 0) scale(0.8, 1);
+  }
+  6% {
+    transform: translate(0px, 0) scale(1, 1);
+  }
+}
+@-moz-keyframes scanlines {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 20px 20px;
+  }
+}
+@-webkit-keyframes scanlines {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 20px 20px;
+  }
+}
+@-o-keyframes scanlines {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 20px 20px;
+  }
+}
+@keyframes scanlines {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 20px 20px;
+  }
+}
