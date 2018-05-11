@@ -4,7 +4,7 @@
 import Promise from 'bluebird';
 
 let centurionEl, consoleEl;
-
+let promptMSg = "Now there is a spooky DOS style message appearing."
 window.onload = function()
 {
 
@@ -36,7 +36,7 @@ async function writeAnimate(msg, element)
 {
   let chars, speed;
   console.log(msg.length)
-  speed = 160
+  speed = 120
   await Promise.delay(speed*3)
   for (var index = 0; index < msg.length; index++) {
       chars = msg.slice(index,index+1)
@@ -57,7 +57,7 @@ function createEventHandlers()
 {
   console.log("creating Event Handlers");
   centurionEl.addEventListener("click", function() {
-    writeAnimate("onclick happened", consoleEl);
+    writeAnimate(promptMSg, consoleEl);
   });
   centurionEl.addEventListener("mouseover", simpleLog("over"));
   centurionEl.addEventListener("mouseout", function() {

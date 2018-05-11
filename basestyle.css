@@ -27,7 +27,9 @@ pre:not(#style-text) {
   -webkit-transform-origin: left;
 }
 
-
+.text {
+  transform: translate(40%, 50%);
+}
 
 
 pre, a {
