@@ -14,6 +14,73 @@ html {
   -webkit-perspective: 1000px;
 }*/
 
+.wrapper {
+  margin: auto;
+  max-width: 800px;
+  border: 2px solid #1f1d1d;
+
+}
+
+.main-nav ul{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  list-style: none;
+  font: Helvetica;
+  background-color: #2a2828;
+  margin:0;
+  padding:0;
+  justify-items: stretch;
+}
+
+.main-nav a {
+  text-decoration: none;
+  display: block;
+  text-transform: uppercase;
+  text-align: center;
+
+}
+
+.advert {
+  display: grid;
+  background: url(imgs/ScaryMansion.jpeg);
+  background-size: cover;
+  min-height: 300px;
+
+  grid-template-areas:
+    'hayride-logo hayride-logo hayride-logo'
+    'advert-spacer advert-spacer advert-spacer'
+    'advert-spacer2 scary-fun advert-spacer3';
+}
+
+.advert-spacer {
+  grid-area: advert-spacer;
+}
+.advert-spacer2 {
+  grid-area: advert-spacer2;
+}
+.advert-spacer3 {
+  grid-area: advert-spacer3;
+}
+
+
+.hayride-logo {
+  grid-area: hayride-logo;
+  display: grid;
+  justify-items: center;
+}
+
+
+.scary-fun {
+  grid-area: scary-fun;
+  display: grid;
+  align-items: end;
+  justify-items: center;
+}
+
+#scaryfunimg {
+  max-width: 50%;
+  padding-bottom: .5rem;
+}
 
 #content{
   height: 100%;

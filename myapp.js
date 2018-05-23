@@ -4,7 +4,7 @@
 import Promise from 'bluebird';
 
 let centurionEl, consoleEl;
-let promptMSg = "Now there is a spooky DOS style message appearing."
+let promptMSg = "Welcome Centurion. You've demonstrated yourself to be clever enough to uncover the first mystery. Would you like to go deeper?"
 window.onload = function()
 {
 
@@ -35,6 +35,9 @@ document.addEventListener("DOMContentLoaded", function() {
 async function writeAnimate(msg, element)
 {
   let chars, speed;
+  if (element.innerHTML) {
+    element.innerHTML = ''
+  }
   console.log(msg.length)
   speed = 120
   await Promise.delay(speed*3)
