@@ -86,6 +86,8 @@ html {
   height: 100%;
   width: 100%;
   -webkit-perspective: 1000px;
+  margin: 0;
+  padding: 0;
 
 }
 
@@ -110,7 +112,7 @@ pre:not(:empty) {
   background: rgb(48, 48, 48);
   border: 1px solid #ccc;
   max-height: 44.6%;
-  width: 49%;
+  width: 55%;
   font-size: 14px;
   font-family: monospace;
   padding: 10px 10px 20px;
