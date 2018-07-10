@@ -5,14 +5,9 @@ html {
   box-sizing: border-box;
 }
 
-
 * {
   -webkit-transition: all 1s;
 }
-
-/*body {
-  -webkit-perspective: 1000px;
-}*/
 
 .wrapper {
   margin: auto;
@@ -48,20 +43,9 @@ html {
 
   grid-template-areas:
     'hayride-logo hayride-logo hayride-logo'
-    'advert-spacer advert-spacer advert-spacer'
-    'advert-spacer2 scary-fun advert-spacer3';
+    '. . .'
+    '. scary-fun .';
 }
-
-.advert-spacer {
-  grid-area: advert-spacer;
-}
-.advert-spacer2 {
-  grid-area: advert-spacer2;
-}
-.advert-spacer3 {
-  grid-area: advert-spacer3;
-}
-
 
 .hayride-logo {
   grid-area: hayride-logo;
@@ -85,8 +69,9 @@ html {
 #content{
   height: 100%;
   width: 100%;
+  max-width: 800px;
   -webkit-perspective: 1000px;
-  margin: 0;
+  margin: auto;
   padding: 0;
 
 }
@@ -105,7 +90,9 @@ pre, a {
   color: white;
 }
 
-
+pre:empty {
+  display: none;
+}
 
 pre:not(:empty) {
   overflow: auto;
@@ -121,7 +108,14 @@ pre:not(:empty) {
   outline: 0;
 }
 
+#work-text {
+  overflow-y: scroll;
+  max-height: 400px;
+}
 
+#main-dos {
+  max-height: 400px;
+}
 
 #style-text {
   -webkit-transform: translateX(95%);

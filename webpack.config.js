@@ -7,13 +7,13 @@ console.log("webpack.config running")
 module.exports = {
   context: __dirname,
   entry: {
-    'myapp': './myapp.js'
+    'hayride_app': './hayride_app.js'
   },
   output: {
     path: path.join(__dirname, "/dist"),
     filename: "[name].js",
     libraryTarget: "umd",
-    library: "myapp",
+    library: "hayride_app",
   },
   devtool: 'source-map',
   module: {
@@ -29,7 +29,10 @@ module.exports = {
     contentBase: __dirname,
     publicPath: '/dist',
     compress: true,
-    port: 8000
+    port: 8000,
+    proxy: {
+      "/api": "http://localhost:8080"
+    }
   },
   plugins: [
     new webpack.optimize.OccurrenceOrderPlugin(),
