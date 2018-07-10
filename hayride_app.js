@@ -1,6 +1,4 @@
 
-/*var http = require('http')*/
-/*import good from './JSExFiles'*/
 import Promise from 'bluebird';
 
 let centurionEl, consoleEl, inputEl;
